@@ -12,4 +12,22 @@ class LibraryTest {
         val result = classUnderTest.getCanteens().execute().body()!!
         assertFalse(result.isEmpty())
     }
+
+    @Test fun getDays() {
+        val classUnderTest = OpenMensaService()
+        val result = classUnderTest.getDays(1).execute().body()!!
+        assertFalse(result.isEmpty())
+    }
+
+    @Test fun getTodaysMeals() {
+        val classUnderTest = OpenMensaService()
+        try {
+            val result = classUnderTest.getTodaysMeals(1).execute().body()!!
+            assertFalse(result.isEmpty())
+        } catch (e: NoMealsForDateException) {
+
+        } catch (e: MensaClosedException) {
+
+        }
+    }
 }
