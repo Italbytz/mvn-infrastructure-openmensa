@@ -11,6 +11,6 @@ data class Meal (
 data class Prices (
     val students: Double? = null,
     val employees: Double? = null,
-    val pupils: Any? = null,
+    val pupils: Double? = null,
     val others: Double? = null
 )
